@@ -1,5 +1,4 @@
 import { CardContainer, CardGrid, StyledCard } from "./styled";
-
 interface ProductProps {
   brand: string;
   description: string;
