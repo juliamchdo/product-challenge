@@ -10,6 +10,7 @@ interface ProductProps {
 
 interface CardProps {
   products: ProductProps[];
+  
 }
 
 export function Card({ products }: CardProps) {
