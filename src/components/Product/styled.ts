@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const CardContainer = styled.div`
+export const ProductContainer = styled.div`
   width: 65%;
   display: flex;
   align-items: center;
@@ -8,7 +8,7 @@ export const CardContainer = styled.div`
   box-sizing: border-box;
 `;
 
-export const CardGrid = styled.div`
+export const ProductGrid = styled.div`
   display: grid;
   grid-template-rows: repeat(auto-fit, 1fr);
   gap: 1.375rem;
@@ -27,7 +27,7 @@ export const CardGrid = styled.div`
   }
 `;
 
-export const StyledCard = styled.div`
+export const ProductCard = styled.div`
   border-radius: 0.5rem;
   box-shadow: 0rem 0.125rem 0.5rem 0rem rgba(0, 0, 0, 0.14);
   box-sizing: border-box;

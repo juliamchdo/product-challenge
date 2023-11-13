@@ -1,43 +1,29 @@
-import { Dispatch, SetStateAction } from "react";
 import ShoppingBag from "../../assets/shopping-bag.svg";
+import { ProductProps } from "../../types/product";
 import {
   Button,
-  CardContainer,
-  CardGrid,
+  ProductContainer,
+  ProductGrid,
   Content,
   Price,
-  StyledCard,
+  ProductCard,
   SubTitle,
   TitleContainer,
 } from "./styled";
-interface ProductProps {
-  brand: string;
-  description: string;
-  id: number;
-  name: string;
-  photo: string;
-  price: string;
-}
+import { PorductItems } from "../../types/products";
 
-interface CardProps {
-  products: ProductProps[];
-  chartItems: ProductProps[];
-  setChartItems: Dispatch<SetStateAction<ProductProps[]>>
-}
-
-export function Card({ products, chartItems, setChartItems }: CardProps) {
-
-  function handleCick(item : ProductProps){
+export function Product({ products, chartItems, setChartItems }: PorductItems) {
+  function handleCick(item: ProductProps) {
     const updateChartItems = [item, ...chartItems];
     setChartItems(updateChartItems);
   }
 
   return (
-    <CardContainer>
-      <CardGrid>
+    <ProductContainer>
+      <ProductGrid>
         {products.map((item) => {
           return (
-            <StyledCard key={item.id}>
+            <ProductCard key={item.id}>
               <Content>
                 <img src={item.photo} alt={item.name} />
                 <TitleContainer>
@@ -51,10 +37,10 @@ export function Card({ products, chartItems, setChartItems }: CardProps) {
                 <img src={ShoppingBag} alt="shopping bag" />
                 COMPRAR
               </Button>
-            </StyledCard>
+            </ProductCard>
           );
         })}
-      </CardGrid>
-    </CardContainer>
+      </ProductGrid>
+    </ProductContainer>
   );
 }

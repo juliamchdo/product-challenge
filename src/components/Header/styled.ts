@@ -7,7 +7,6 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-left: 4rem;
   background-color: #0f52ba;
 `;
 
@@ -16,6 +15,7 @@ export const Title = styled.p`
   color: #fff;
   font-size: 2.5rem;
   font-weight: 600;
+  padding-left: 3rem;
 `;
 
 export const Subtitle = styled.p`

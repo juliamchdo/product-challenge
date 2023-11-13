@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const StyledMenu = styled.nav`
+export const StyledSidebar = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #0F52BA;
@@ -17,6 +17,7 @@ export const StyledMenu = styled.nav`
 
   @media screen and (min-width: 881px){
     width: 30.375rem;
+    padding: 0 2rem;
   }
 
   img {
@@ -25,15 +26,17 @@ export const StyledMenu = styled.nav`
   }
 `;
 
-export const MenuContainer = styled.div`
+export const SidebarContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2rem;
 
   h2{
+    width: 9.375rem;
     color: #fff;
     font-size: 1.6875rem;
     font-weight: 700;
+    line-height: 2rem;
   }
 `

@@ -1,4 +1,4 @@
-import { Card } from "../../components/Card";
+import { Product } from "../../components/Product";
 import { Header } from "../../components/Header";
 import { api } from "../../lib/axios";
 import { useQuery } from "react-query";
@@ -42,7 +42,7 @@ export function Home() {
   return (
     <HomeContainer>
       <Header chartItems={chartItems} />
-      <Card products={data} chartItems={chartItems} setChartItems={setChartItems}/>
+      <Product products={data} chartItems={chartItems} setChartItems={setChartItems}/>
     </HomeContainer>
   );
 }
