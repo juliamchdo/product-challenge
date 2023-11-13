@@ -1,24 +1,48 @@
 import { Card } from "../../components/Card";
+import { Header } from "../../components/Header";
 import { api } from "../../lib/axios";
 import { useQuery } from "react-query";
+import { HomeContainer } from "./styled";
+import { useState } from "react";
 
 export function Home() {
+  const { data, isLoading, error } = useQuery(
+    "products",
+    async () => {
+      const response = await api.get(
+        "/products?page=1&rows=8&sortBy=id&orderBy=DESC"
+      );
+      return response.data.products;
+    },
+    {
+      retry: 5,
+    }
+  );
 
-  const { data, isLoading, error } = useQuery("products", () => {
-    return api
-      .get("/products?page=1&rows=8&sortBy=id&orderBy=DESC")
-      .then((response) => response.data.products);
-  }, {
-    retry: 5
-  });
-
-  if(isLoading){
-    return <div>Carregando...</div>
+  interface ProductProps {
+    brand: string;
+    description: string;
+    id: number;
+    name: string;
+    photo: string;
+    price: string;
   }
 
-  if(error){
-    return <div>Algo deu errado</div>
+
+  const [chartItems, setChartItems] = useState<ProductProps[]>([]);
+
+  if (isLoading) {
+    return <h1>Carregando...</h1>;
   }
 
-  return <Card products={data} />;
+  if (error) {
+    return <h1>Algo deu errado</h1>;
+  }
+
+  return (
+    <HomeContainer>
+      <Header chartItems={chartItems} />
+      <Card products={data} chartItems={chartItems} setChartItems={setChartItems}/>
+    </HomeContainer>
+  );
 }

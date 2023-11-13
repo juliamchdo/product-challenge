@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const Nav = styled.nav`
   height: 6.3125rem;
-  background-color: #0f52ba;
+  width: 100vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  position: relative;
+  padding-left: 4rem;
+  background-color: #0f52ba;
 `;
 
 export const Title = styled.p`
