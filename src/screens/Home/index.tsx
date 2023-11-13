@@ -1,33 +1,24 @@
 import { Card } from "../../components/Card";
 import { api } from "../../lib/axios";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
-export function Home(){
+export function Home() {
 
-    interface ProductProps {
-        brand: string,
-        description: string,
-        id: number,
-        name: string,
-        photo: string,
-        price: string,
-    }
+  const { data, isLoading, error } = useQuery("products", () => {
+    return api
+      .get("/products?page=1&rows=8&sortBy=id&orderBy=DESC")
+      .then((response) => response.data.products);
+  }, {
+    retry: 5
+  });
 
-    const [products, setProducts] = useState<ProductProps[]>([]);
+  if(isLoading){
+    return <div>Carregando...</div>
+  }
 
-//     const queryInfo = useQuery(["products"], () => {
-//     api.get("/products?page=1&rows=8&sortBy=id&orderBy=DESC").then((response) => {
-//       return response;
-//     })
-//   })
+  if(error){
+    return <div>Algo deu errado</div>
+  }
 
-   useEffect(() => {
-    api.get("/products?page=1&rows=8&sortBy=id&orderBy=DESC").then((response) => {
-      setProducts(response.data.products);
-    });
-  }, []);
-
-    return (
-        <Card products={products} />
-    )
+  return <Card products={data} />;
 }
