@@ -13,6 +13,7 @@ interface CardProps {
   products: ProductProps[];
 }
 
+
 export function Card({ products }: CardProps) {
   return (
     <CardContainer>
