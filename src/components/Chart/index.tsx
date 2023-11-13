@@ -8,7 +8,6 @@ interface ChartProps {
 }
 
 export function Chart({open, setOpen} : ChartProps) {
-
   return (
     <ChartButton onClick={() => setOpen(!open)}>
       <ButtonContainer >
