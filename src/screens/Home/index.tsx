@@ -4,6 +4,7 @@ import { api } from "../../lib/axios";
 import { useQuery } from "react-query";
 import { HomeContainer } from "./styled";
 import { useState } from "react";
+import { Footer } from "../../components/Footer";
 
 export function Home() {
   const { data, isLoading, error } = useQuery(
@@ -41,8 +42,9 @@ export function Home() {
 
   return (
     <HomeContainer>
-      <Header chartItems={chartItems} />
+      <Header chartItems={chartItems} setChartItems={setChartItems}/>
       <Product products={data} chartItems={chartItems} setChartItems={setChartItems}/>
+      <Footer />
     </HomeContainer>
   );
 }

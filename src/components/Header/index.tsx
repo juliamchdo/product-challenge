@@ -4,7 +4,7 @@ import { Sidebar } from "../Sidebar";
 import { Nav, LogoContainer, Title, Subtitle } from "./styled";
 import { HeaderProps } from "../../types/header";
 
-export function Header({ chartItems }: HeaderProps) {
+export function Header({ chartItems, setChartItems }: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ export function Header({ chartItems }: HeaderProps) {
 
       {!open && <Chart open={open} setOpen={setOpen} chartItems={chartItems} />}
       {open && (
-        <Sidebar open={open} setOpen={setOpen} sidebarItems={chartItems} />
+        <Sidebar open={open} setOpen={setOpen} sidebarItems={chartItems} setChartItems={setChartItems}/>
       )}
     </Nav>
   );

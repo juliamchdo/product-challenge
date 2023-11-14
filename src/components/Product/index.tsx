@@ -28,7 +28,7 @@ export function Product({ products, chartItems, setChartItems }: PorductItems) {
                 <img src={item.photo} alt={item.name} />
                 <TitleContainer>
                   <h1>{item.name}</h1>
-                  <Price>R${item.price}</Price>
+                  <Price>R${Number(item.price)}</Price>
                 </TitleContainer>
                 <SubTitle>{item.description}</SubTitle>
               </Content>

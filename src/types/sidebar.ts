@@ -5,4 +5,5 @@ export interface SidebarProps {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
     sidebarItems: ProductProps[];
+    setChartItems: Dispatch<SetStateAction<ProductProps[]>>;
   }

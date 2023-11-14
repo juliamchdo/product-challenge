@@ -35,17 +35,17 @@ export const ProductCard = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 13.625rem;
-  height: 17.8125rem;
+  width: 21.8rem;
+  height: 28.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
 
   img {
     width: fullWidth;
-    height: 8.625rem;
+    height: 13.8rem;
   }
 `;
 
@@ -57,20 +57,22 @@ export const TitleContainer = styled.div`
   gap: 0.5rem;
 
   h1 {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 400;
+    line-height: 1.9rem;
     color: #2c2c2c;
   }
 `;
 
 export const SubTitle = styled.h2`
-  font-size: 0.625rem;
+  font-size: 1rem;
   font-weight: 300;
+  line-height? 1.2rem;
 `;
 
 export const Price = styled.div`
-  border-radius: 0.3125rem;
-  font-size: 0.9375rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
   background-color: #373737;
   color: #fff;
   text-align: center;
@@ -85,9 +87,9 @@ export const Button = styled.button`
   justify-content: center;
   gap: 0.875rem;
   width: 100%;
-  height: 2rem;
+  height: 2.85rem;
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 1.4rem;
   color: #fff;
   background-color: #0f52ba;
   border: 1px solid #0f52ba;
