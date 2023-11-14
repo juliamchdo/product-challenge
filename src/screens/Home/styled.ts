@@ -10,3 +10,10 @@ export const HomeContainer = styled.div`
     background: #F9F9F9;
 }
 `;
+
+export const Loading = styled.div`
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;

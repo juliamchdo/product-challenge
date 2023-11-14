@@ -8,6 +8,10 @@ export const Nav = styled.nav`
   align-items: center;
   position: relative;
   background-color: #0f52ba;
+
+  @media screen and (max-width: 999px){
+    padding: 1rem;
+  }
 `;
 
 export const Title = styled.p`

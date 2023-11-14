@@ -4,6 +4,6 @@ import { ProductProps } from "./product";
 export interface SidebarProps {
     open: boolean;
     setOpen: Dispatch<SetStateAction<boolean>>;
-    sidebarItems: ProductProps[];
+    sidebarItems: ProductProps[] | [];
     setChartItems: Dispatch<SetStateAction<ProductProps[]>>;
   }

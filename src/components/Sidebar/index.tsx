@@ -9,8 +9,14 @@ import { SidebarItems } from "../SidebarItems";
 import { SidebarProps } from "../../types/sidebar";
 import { useState } from "react";
 
-export function Sidebar({ open, setOpen, sidebarItems, setChartItems }: SidebarProps) {
-  const [total, setTotal] = useState(0);
+export function Sidebar({
+  open,
+  setOpen,
+  sidebarItems,
+  setChartItems,
+}: SidebarProps) {
+  const [total, setTotal] = useState(5);
+
   return (
     <StyledSidebar>
       <div>
@@ -32,7 +38,7 @@ export function Sidebar({ open, setOpen, sidebarItems, setChartItems }: SidebarP
           <h2>Total</h2>
           <h2>R${total}</h2>
         </Total>
-        <SidebarButton>Finalizar Compra</SidebarButton>
+        {sidebarItems.length !== 0 && <SidebarButton>Finalizar Compra</SidebarButton>}
       </div>
     </StyledSidebar>
   );
